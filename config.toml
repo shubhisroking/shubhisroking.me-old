@@ -79,4 +79,5 @@ paginate     = 10
 #     name       = "About"
 #     url        = "/about"
 
-     logoCursorDisabled = true
+logoCursorDisabled = true
+enableRobotsTXT = true
