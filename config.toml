@@ -1,4 +1,4 @@
-baseurl      = "localhost"
+baseurl      = "https://www.shubhisroking.me/"
 title        = "shubhisroking"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
