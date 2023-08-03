@@ -1,6 +1,12 @@
 <footer>
     <div>
       <p>
+        <span>&copy; {{ now.Format "2006" }}</span>
+        {{ if .Site.Author.name }}
+            <span><a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a></span>
+        {{ end }}
+    </p>
+      <p>
         <a href="https://stats.uptimerobot.com/x08p2hmL99">Status</a>
       </p>
     </div>
