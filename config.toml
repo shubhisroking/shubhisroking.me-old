@@ -50,7 +50,7 @@ paginate     = 10
 
   [[params.social]]
     name = "telegram"
-    url  = "https://t.me/shubhisrokingg"
+    url  = "https://t.me/shubhisrocking"
 
 [taxonomies]
     category = "categories"
