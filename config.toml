@@ -52,6 +52,10 @@ paginate     = 10
     name = "telegram"
     url  = "https://t.me/shubhisrocking"
 
+  [[params.social]]
+    name = "matrix"
+    url  = "https://matrix.to/#/@shubhisroking:matrix.org"
+
 [taxonomies]
     category = "categories"
     tag = "tags"
