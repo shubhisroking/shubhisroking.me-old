@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/g/:repo*",
+      "destination": "https://github.com/shubhisroking/:repo*",
+      "permanent": false
+    }
+  ]
+}
