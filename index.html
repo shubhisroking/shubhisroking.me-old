@@ -76,29 +76,35 @@
         </div>
     </div>
     <script>
-                function startLoader() {
-            const counterElement = document.querySelector('.counter');
-            let currentValue = 0;
-    
-            function updateCounter() {
-                if (currentValue >= 100) {
-                    counterElement.style.display = 'none'; // Hide counter when it reaches 100
-                    return;
-                }
-    
-                currentValue += Math.floor(Math.random() * 10) + 1;
-                currentValue = Math.min(currentValue, 100); // Ensure currentValue does not exceed 100
-    
-                counterElement.textContent = currentValue + '%';
-    
-                const delay = Math.floor(Math.random() * 200) + 50;
-                setTimeout(updateCounter, delay);
-            }
-    
-            updateCounter();
+    function startLoader() {
+    const counterElement = document.querySelector('.counter');
+    let currentValue = 0;
+
+    // Disable text selection
+    document.body.style.userSelect = 'none';
+
+    function updateCounter() {
+        if (currentValue >= 100) {
+            counterElement.style.display = 'none'; // Hide counter when it reaches 100
+
+            // Enable text selection
+            document.body.style.userSelect = 'auto';
+            return;
         }
-    
-        startLoader();
+
+        currentValue += Math.floor(Math.random() * 10) + 1;
+        currentValue = Math.min(currentValue, 100); // Ensure currentValue does not exceed 100
+
+        counterElement.textContent = currentValue + '%';
+
+        const delay = Math.floor(Math.random() * 200) + 50;
+        setTimeout(updateCounter, delay);
+    }
+
+    updateCounter();
+}
+
+startLoader();
     
         const animationDelay = 2; // Sensible delay for animations
         const animationDuration = 1.5; // Duration of animations
