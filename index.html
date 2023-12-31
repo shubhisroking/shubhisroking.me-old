@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shubhisroking</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="counter-wrap">
+        <h1 class="counter">0</h1>
+        <div class="counter-revealer"></div>
+    </div>
+
+    <div class="container">
+        <div class="row row-1">
+            <div class="design col">
+                <div class="item">
+                    <h1>3d</h1>
+                    <div class="item-revealer"></div>
+                </div>
+                <div class="item">
+                    <h1>Frontend</h1>
+                    <div class="item-revealer"></div>
+                </div>
+                <div class="item">
+                    <h1>Android</h1>
+                    <div class="item-revealer"></div>
+                </div>
+                <div class="item">
+                    <h1>*Nix</h1>
+                    <div class="item-revealer"></div>
+                </div>
+                <div class="item item-tag-1">
+                    <p>design</p>
+                    <div class="item-revealer"></div>
+                </div>
+            </div>
+            <div class="dev col">
+                <div class="item item-tag-2">
+                    <p>Devlopment</p>
+                    <div class="item-revealer"></div>
+                </div>
+                <div class="item">
+                    <h1>Backend</h1>
+                    <div class="item-revealer"></div>
+                </div>
+                <div class="item">
+                    <h1>User Interface</h1>
+                    <div class="item-revealer"></div>
+                </div>
+                <div class="item">
+                    <h1>Docker</h1>
+                    <div class="item-revealer"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-2">
+            <div class="logo">
+                <div class="item-main">
+                   <h1>Shubh&copy;</h1>
+                   <div class="item-main-revealer"></div>
+                </div>
+            </div>
+            <div class="arrow">
+                <div class="item-main">
+                    <h1>&#8600</h1>
+                    <div class="item-main-revealer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function startLoader() {
+            const counterElement = document.querySelector('.counter');
+            let currentValue = 0;
+    
+            function updateCounter() {
+                if (currentValue >= 100) {
+                    counterElement.style.display = 'none'; // Hide counter when it reaches 100
+                    return;
+                }
+    
+                currentValue += Math.floor(Math.random() * 10) + 1;
+                currentValue = Math.min(currentValue, 100); // Ensure currentValue does not exceed 100
+    
+                counterElement.textContent = currentValue + '%';
+    
+                const delay = Math.floor(Math.random() * 200) + 50;
+                setTimeout(updateCounter, delay);
+            }
+    
+            updateCounter();
+        }
+    
+        startLoader();
+    
+        const animationDelay = 2; // Sensible delay for animations
+        const animationDuration = 1.5; // Duration of animations
+        const animationEase = "power4.inOut"; // Animation easing function
+    
+        gsap.to(".counter-wrap h1", animationDuration, {
+            delay: animationDelay,
+            y: -280,
+            ease: animationEase,
+            onComplete: function() {
+                document.querySelector('.counter').style.display = 'none'; // Hide counter when animation ends
+            }
+        });
+    
+        gsap.to(".item h1, .item p", animationDuration, {
+            delay: animationDelay + 1, // Delay increased to 3
+            y: -40,
+            ease: animationEase,
+            stagger: {
+                amount: 0.5
+            }
+        })
+    
+        gsap.to(".item-main h1, .item p", animationDuration, {
+            delay: animationDelay + 1, // Delay increased to 3
+            y: -280,
+            ease: animationEase,
+            stagger: {
+                amount: 0.5
+            }
+        })
+    </script>
+</body>
+</html>
